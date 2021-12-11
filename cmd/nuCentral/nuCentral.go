@@ -1,9 +1,8 @@
 package main
 
 import (
-	"fmt"
-
 	log "github.com/sirupsen/logrus"
+	"github.com/taskmedia/nuCentral/pkg/http/rest"
 )
 
 func init() {
@@ -12,5 +11,6 @@ func init() {
 }
 
 func main() {
-	fmt.Println("init")
+	router := rest.SetupRouter()
+	router.Run("0.0.0.0:8080")
 }
